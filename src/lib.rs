@@ -1,19 +1,16 @@
+#[macro_use]
+extern crate seed;
+use seed::prelude::*;
 use wasm_bindgen::prelude::*;
-
-// This prelude is the equivalent of the following imports:
-// use rebar::dom_types::{El, Style, Attrs, Tag, Event, Events, UpdateEl};
-// use rebar::vdom::App;
-use crate::prelude::*;
 
 
 // Model
 
-#[derive(Clone, Debug)] // todo
+#[derive(Clone)]
 struct Model {
     pub val: i32,
 }
 
-// Setup a default here, for initialization later.
 impl Default for Model {
     fn default() -> Self {
         Self {
@@ -22,35 +19,30 @@ impl Default for Model {
     }
 }
 
+
 // Update
 
+#[derive(Clone)]
 enum Msg {
     Increment,
 }
 
-//fn update(msg: &Msg, model: Rc<Model>) -> Model {
-fn update(msg: &Msg, model: Rc<RefCell<Model>>) -> Model {
-    // todo msg probably doesn't need to be a ref.
-//    let model2 = model.clone(); // todo deal with this.
+fn update(msg: &Msg, model: &Model) -> Model {
     match msg {
-        &Msg::Increment => {
-//            Model {clicks: model.clicks + 1, ..model.unwrap()}
-            Model {clicks: model.borrow().clicks + 1, what_we_count: String::from("test")}
+        Msg::Increment => {
+            Model {val: model.val + 1}
         },
     }
 }
 
+
 // View
 
-// Top-level component we pass to the virtual dom. Must accept the model as its only argument.
-fn comp(model: &Model) -> El<Msg> {
-    !div[]]
+fn main_comp(model: &Model) -> El<Msg> {
+    div![ "Hello, World" ]
 }
 
 #[wasm_bindgen]
-pub fn render() -> Result<(), JsValue> {
-    let model = Model::default();
-
-    let mut app = App::new(model, update, comp, "main");
-    app.mount()
+pub fn render() {
+    seed::vdom::run(Model::default(), update, main_comp, "main");
 }
