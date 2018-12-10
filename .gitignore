@@ -2,5 +2,9 @@
 **/*.rs.bk
 Cargo.lock
 
+# Pycharm
+*.iws
+workspace.xml
+
 **/pkg/*
 **/.wasm

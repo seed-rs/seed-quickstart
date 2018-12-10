@@ -29,20 +29,21 @@ enum Msg {
 
 fn update(msg: &Msg, model: &Model) -> Model {
     match msg {
-        Msg::Increment => {
-            Model {val: model.val + 1}
-        },
+        Msg::Increment => Model {val: model.val + 1}
     }
 }
 
 
 // View
 
-fn main_comp(model: &Model) -> El<Msg> {
-    div![ "Hello, World" ]
+fn view(model: &Model) -> El<Msg> {
+    button![ 
+        vec![simple_ev("click", Msg::Increment)], 
+        format!("Hello, World × {}", model.val) 
+    ]
 }
 
 #[wasm_bindgen]
 pub fn render() {
-    seed::vdom::run(Model::default(), update, main_comp, "main");
+    seed::run(Model::default(), update, view, "main");
 }
