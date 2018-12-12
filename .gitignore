@@ -6,5 +6,7 @@ Cargo.lock
 *.iws
 workspace.xml
 
-**/pkg/*
-**/.wasm
+pkg/*.wasm
+pkg/*.d.ts
+pkg/*.ts
+pkg/*.js
