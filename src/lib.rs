@@ -27,7 +27,7 @@ enum Msg {
     Increment,
 }
 
-fn update(msg: &Msg, model: &Model) -> Model {
+fn update(msg: Msg, model: &Model) -> Model {
     match msg {
         Msg::Increment => Model {val: model.val + 1}
     }
@@ -36,7 +36,7 @@ fn update(msg: &Msg, model: &Model) -> Model {
 
 // View
 
-fn view(model: &Model) -> El<Msg> {
+fn view(model: Model) -> El<Msg> {
     button![ 
         vec![simple_ev("click", Msg::Increment)], 
         format!("Hello, World × {}", model.val) 
