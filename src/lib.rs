@@ -38,7 +38,7 @@ fn update(msg: Msg, model: Model) -> Model {
 
 fn view(model: Model) -> El<Msg> {
     button![ 
-        vec![simple_ev("click", Msg::Increment)], 
+        simple_ev("click", Msg::Increment), 
         format!("Hello, World × {}", model.val) 
     ]
 }

@@ -3,7 +3,7 @@
 **To get started:**
 - Clone this repo
 
-- If you don't have Rust and wasm-bindgen installed, [Download it](https://www.rust-lang.org), and run the following commands:
+- If you don't have Rust and wasm-bindgen installed, [Download it](https://www.rust-lang.org/tools/install), and run the following commands:
 
 `rustup update`
 
@@ -11,7 +11,9 @@
 
 `cargo install wasm-bindgen-cli`
 
- - Run `build.sh` or `build.ps1`, then open `index.html` in a web browser, or use a local server. (Opening the file directly may not work in some browsers.)
+ - Run `build.sh` or `build.ps1`, then then start a dev server that supports WASM.
+For example, with [Python](https://www.python.org/downloads/) installed, run `python server.py`.
+(Linux users may need to run `python3 server.py`.)
 
 Once you rename the crate in `Cargo.toml` (The `name` field under `[Package]`), make the 
 following changes:
