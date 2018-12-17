@@ -27,7 +27,7 @@ enum Msg {
     Increment,
 }
 
-fn update(msg: Msg, model: Model) -> Model {
+fn update(history: &mut History<Model, Msg>, msg: Msg, model: Model) -> Model {
     match msg {
         Msg::Increment => Model {val: model.val + 1}
     }
@@ -45,5 +45,5 @@ fn view(model: Model) -> El<Msg> {
 
 #[wasm_bindgen]
 pub fn render() {
-    seed::run(Model::default(), update, view, "main");
+    seed::run(Model::default(), update, view, "main", None);
 }
