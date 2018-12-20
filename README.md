@@ -12,7 +12,7 @@
 `cargo install wasm-bindgen-cli`
 
  - Run `build.sh` or `build.ps1`, then then start a dev server that supports WASM.
-For example, with [Python](https://www.python.org/downloads/) installed, run `python pyserve.py`.
+For example, with [Python](https://www.python.org/downloads/) installed, run `python serve.py`.
 (Linux users may need to run `python3 serve.py`.)
 
 Once you rename the crate in `Cargo.toml` (The `name` field under `[Package]`), make the 
