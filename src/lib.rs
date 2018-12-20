@@ -27,7 +27,7 @@ enum Msg {
     Increment,
 }
 
-fn update(history: &mut History<Model, Msg>, msg: Msg, model: Model) -> Model {
+fn update(msg: Msg, model: Model) -> Model {
     match msg {
         Msg::Increment => Model {val: model.val + 1}
     }
