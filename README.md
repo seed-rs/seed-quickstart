@@ -24,10 +24,8 @@ If you run into permission errors on `build.sh`, try this command
 to allow executing the file:`chmod +x build.sh`. If you run into persmission errors on `build.ps1`, open Powershell as an administrator, and enter this command: `Set-ExecutionPolicy RemoteSigned`.
 
 Once you rename the crate in `Cargo.toml` (The `name` field under `[Package]`), make the 
-following changes:
+following change:
 
-- Replace both occurances of `appname`  (`/appname.js` and `/appname.wasm`) in `index.html` with your crate's name.
-
-- Make the same replacement in either `build.sh`, or `build.ps1`, depending on your
-operating system. You may delete the other one.
+- Replace `appname` with your new name in either `build.sh`, or `build.ps1`, depending on your
+operating system.
 
