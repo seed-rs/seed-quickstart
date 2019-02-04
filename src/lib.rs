@@ -37,7 +37,7 @@ fn update(msg: Msg, model: Model) -> Update<Model> {
 
 fn view(_state: seed::App<Msg, Model>, model: &Model) -> El<Msg> {
     button![ 
-        simple_ev("click", Msg::Increment), 
+        simple_ev(Ev::Click, Msg::Increment), 
         format!("Hello, World × {}", model.val) 
     ]
 }
