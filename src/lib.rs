@@ -26,7 +26,7 @@ enum Msg {
     Increment,
 }
 
-fn update(msg: Msg, model: Model) -> Update<Model> {
+fn update(msg: Msg, model: Model) -> Update<Msg, Model> {
     match msg {
         Msg::Increment => Render(Model {val: model.val + 1})
     }
