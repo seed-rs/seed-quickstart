@@ -5,7 +5,6 @@ use seed::prelude::*;
 
 // Model
 
-#[derive(Clone)]
 struct Model {
     pub val: i32,
 }

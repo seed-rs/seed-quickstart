@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 
 
 [dependencies]
-seed = "^0.2.9"
+seed = "^0.2.10"
 wasm-bindgen = "^0.2.37"
 web-sys = "^0.3.6"
 
