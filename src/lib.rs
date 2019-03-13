@@ -25,16 +25,17 @@ enum Msg {
     Increment,
 }
 
-fn update(msg: Msg, model: Model) -> Update<Msg, Model> {
+fn update(msg: Msg, model: &mut Model) -> Update<Msg> {
     match msg {
-        Msg::Increment => Render(Model {val: model.val + 1})
+        Msg::Increment => model.val += 1,
     }
+    Render.into()
 }
 
 
 // View
 
-fn view(_state: seed::App<Msg, Model>, model: &Model) -> El<Msg> {
+fn view(model: &Model) -> El<Msg> {
     button![ 
         simple_ev(Ev::Click, Msg::Increment), 
         format!("Hello, World × {}", model.val) 
