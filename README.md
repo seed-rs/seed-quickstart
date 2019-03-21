@@ -16,7 +16,7 @@ build chain. On linux, run `sudo apt install build-essential`. On Windows, downl
 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/); when asked in the installer,
 include the C++ workload.
 
- - Run `build.sh` or `build.ps1`, then then start a dev server that supports WASM.
+ - Run `build.sh` or `build.ps1`, then start a dev server that supports WASM.
 For example, with [Python](https://www.python.org/downloads/) installed, run `python serve.py`.
 (Linux users may need to run `python3 serve.py`.)
 
