@@ -35,12 +35,10 @@ fn update(msg: Msg, model: &mut Model) -> Update<Msg> {
 
 // View
 
-fn view(model: &Model) -> Vec<El<Msg>> {
-    vec![
-        button![
-            simple_ev(Ev::Click, Msg::Increment),
-            format!("Hello, World × {}", model.val)
-        ]
+fn view(model: &Model) -> El<Msg> {
+    button![
+        simple_ev(Ev::Click, Msg::Increment),
+        format!("Hello, World × {}", model.val)
     ]
 }
 
