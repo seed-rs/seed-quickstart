@@ -1,6 +1,7 @@
 [env]
 # all workspace members can use this Makefile
 CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = "true"
+PORT = "8000"
 
 # ---- BUILD & CREATE WASMS ----
 [tasks.build]
@@ -34,10 +35,10 @@ dependencies = ["build_release", "create_wasms"]
 
 [tasks.serve]
 description = "Start server"
-install_crate = { crate_name = "https", binary = "http", test_arg = "--help" }
+install_crate = { crate_name = "microserver", binary = "microserver", test_arg = "-h" }
 workspace = false
-command = "http"
-args = []
+command = "microserver"
+args = ["--port", "${PORT}"]
 
 # ---- PRIVATE TASKS - run only inside another task ----
 # private atribute is ignored (bug?)
