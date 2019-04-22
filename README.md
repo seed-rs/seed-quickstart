@@ -1,9 +1,7 @@
 # Seed Quickstart
 
 **To get started:**
-- Clone this repo
-
-
+- Clone this repo: `git clone https://github.com/david-oconnor/seed-quickstart.git`
 
 - If you don't have Rust and cargo-make installed, [Download it](https://www.rust-lang.org/tools/install), and run the following commands:
 
