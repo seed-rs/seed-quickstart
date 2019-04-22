@@ -1,0 +1,50 @@
+[env]
+# all workspace members can use this Makefile
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = "true"
+
+# ---- BUILD & CREATE WASMS ----
+[tasks.build]
+description = "Build only Seed without examples"
+workspace = false
+command = "cargo"
+args = ["build"]
+
+[tasks.build_release]
+description = "Build only Seed without examples"
+workspace = false
+command = "cargo"
+args = ["build", "--release"]
+
+
+[tasks.create_wasms]
+description = "Build examples with wasm-pack"
+workspace = false
+command = "cargo"
+args = ["make", "create_wasm"]
+
+[tasks.all]
+description = "Build all - Seed + examples and create wasms"
+workspace = false
+dependencies = ["build", "create_wasms"]
+
+[tasks.all_release]
+description = "Build all - Seed + examples and create wasms, with the --release flag"
+workspace = false
+dependencies = ["build_release", "build_examples", "create_wasms"]
+
+[tasks.serve]
+description = "Start server for given example"
+install_crate = { crate_name = "https", binary = "http", test_arg = "--help" }
+workspace = false
+command = "http"
+args = []
+
+# ---- PRIVATE TASKS - run only inside another task ----
+# private atribute is ignored (bug?)
+
+[tasks.create_wasm]
+description = "Build example with wasm-pack"
+# private = true
+install_crate = "wasm-pack"
+command = "wasm-pack"
+args = ["build", "--target", "no-modules", "--out-name", "package"]
