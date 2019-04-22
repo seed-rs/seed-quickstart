@@ -30,7 +30,7 @@ dependencies = ["build", "create_wasms"]
 [tasks.all_release]
 description = "Build all - Seed + examples and create wasms, with the --release flag"
 workspace = false
-dependencies = ["build_release", "build_examples", "create_wasms"]
+dependencies = ["build_release", "create_wasms"]
 
 [tasks.serve]
 description = "Start server for given example"

@@ -5,7 +5,7 @@
 
 
 
-- If you don't have Rust and wasm-bindgen installed, [Download it](https://www.rust-lang.org/tools/install), and run the following commands:
+- If you don't have Rust and cargo-make installed, [Download it](https://www.rust-lang.org/tools/install), and run the following commands:
 
 `rustup update`
 
