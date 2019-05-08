@@ -16,7 +16,6 @@ workspace = false
 command = "cargo"
 args = ["build", "--release"]
 
-
 [tasks.create_wasms]
 description = "Build with wasm-pack"
 workspace = false
@@ -39,6 +38,32 @@ install_crate = { crate_name = "microserver", binary = "microserver", test_arg =
 workspace = false
 command = "microserver"
 args = ["--port", "${PORT}"]
+
+# ---- TEST ----
+
+[tasks.test]
+description = "Run tests. Ex: 'cargo make test firefox'. Test envs: [chrome, firefox, safari]"
+clear = true
+workspace = false
+install_crate = { crate_name = "wasm-pack", binary = "wasm-pack", test_arg = "-V" }
+command = "wasm-pack"
+args = ["test", "--${@}"]
+
+[tasks.test_release]
+extend = "test"
+description = "Run tests in release mode. Ex: 'cargo make test firefox'. Test envs: [chrome, firefox, safari]"
+args = ["test", "--${@}", "--release"]
+
+[tasks.test_h]
+description = "Run headless tests. Ex: 'cargo make test_h firefox'. Test envs: [chrome, firefox, safari]"
+extend = "test"
+args = ["test", "--headless", "--${@}"]
+
+[tasks.test_h_release]
+extend = "test_h"
+description = "Run headless tests in release mode. Ex: 'cargo make test_h firefox'. Test envs: [chrome, firefox, safari]"
+args = ["test", "--headless", "--${@}", "--release"]
+
 
 # ---- PRIVATE TASKS - run only inside another task ----
 # private atribute is ignored (bug?)

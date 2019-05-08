@@ -9,7 +9,7 @@
 
 `rustup target add wasm32-unknown-unknown`
 
-`cargo install cargo-make`
+`cargo install --force cargo-make`
 
 Run `cargo make all` in a terminal to build the app, and `cargo make serve` to start a dev server
 on `127.0.0.0:8000`.
