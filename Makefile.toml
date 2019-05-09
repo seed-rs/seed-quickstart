@@ -16,21 +16,27 @@ workspace = false
 command = "cargo"
 args = ["build", "--release"]
 
-[tasks.create_wasms]
+[tasks.create_wasm]
 description = "Build with wasm-pack"
-workspace = false
-command = "cargo"
-args = ["make", "create_wasm"]
+install_crate = "wasm-pack"
+command = "wasm-pack"
+args = ["build", "--target", "no-modules", "--out-name", "package", "--dev"]
+
+[tasks.create_wasm_release]
+description = "Build with wasm-pack"
+install_crate = "wasm-pack"
+command = "wasm-pack"
+args = ["build", "--target", "no-modules", "--out-name", "package"]
 
 [tasks.all]
 description = "Build, and create wasms"
 workspace = false
-dependencies = ["build", "create_wasms"]
+dependencies = ["build", "create_wasm"]
 
 [tasks.all_release]
 description = "Build, and create wasms, with the --release flag"
 workspace = false
-dependencies = ["build_release", "create_wasms"]
+dependencies = ["build_release", "create_wasm_release"]
 
 [tasks.serve]
 description = "Start server"
@@ -64,13 +70,10 @@ extend = "test_h"
 description = "Run headless tests in release mode. Ex: 'cargo make test_h firefox'. Test envs: [chrome, firefox, safari]"
 args = ["test", "--headless", "--${@}", "--release"]
 
-
-# ---- PRIVATE TASKS - run only inside another task ----
-# private atribute is ignored (bug?)
-
-[tasks.create_wasm]
-description = "Build example with wasm-pack"
-# private = true
-install_crate = "wasm-pack"
+[tasks.test_one]
+description = "Run Seed's tests. Ex: 'cargo make test firefox'. Test envs: [chrome, firefox, safari]"
+clear = true
+workspace = false
+install_crate = { crate_name = "wasm-pack", binary = "wasm-pack", test_arg = "-V" }
 command = "wasm-pack"
-args = ["build", "--target", "no-modules", "--out-name", "package"]
+args = ["test", "--firefox", "--headless", "--", "--lib", "${@}"]
