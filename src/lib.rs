@@ -25,11 +25,10 @@ enum Msg {
     Increment,
 }
 
-fn update(msg: Msg, model: &mut Model) -> Update<Msg> {
+fn update(msg: Msg, model: &mut Model, _: &mut Orders<Msg>) {
     match msg {
         Msg::Increment => model.val += 1,
     }
-    Render.into()
 }
 
 
