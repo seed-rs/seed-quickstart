@@ -14,6 +14,6 @@
 Run `cargo make all` in a terminal to build the app, and `cargo make serve` to start a dev server
 on `127.0.0.0:8000`.
 
-If you'd like to make the compiler automatically check for changes, recompiling as
-needed, install Cargo-watch with `cargo install cargo-watch`, then run `cargo make watch` instead of `cargo make all`.
+If you'd like the compiler automatically check for changes, recompiling as
+needed, run `cargo make watch` instead of `cargo make all`.
 
