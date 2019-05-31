@@ -34,7 +34,7 @@ workspace = false
 dependencies = ["build", "create_wasm"]
 
 [tasks.watch]
-description = "watch code, build, and create wasms"
+description = "Build, and create wasms, then watch files for changes"
 workspace = false
 dependencies = ["build", "create_wasm"]
 watch = { ignore_pattern="pkg/*" }
