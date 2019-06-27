@@ -12,7 +12,7 @@
 `cargo install --force cargo-make`
 
 Run `cargo make all` in a terminal to build the app, and `cargo make serve` to start a dev server
-on `127.0.0.0:8000`.
+on `127.0.0.1:8000`.
 
 If you'd like the compiler automatically check for changes, recompiling as
 needed, run `cargo make watch` instead of `cargo make all`.
