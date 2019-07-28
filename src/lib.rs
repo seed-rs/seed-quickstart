@@ -34,7 +34,7 @@ fn update(msg: Msg, model: &mut Model, _: &mut Orders<Msg>) {
 
 // View
 
-fn view(model: &Model) -> El<Msg> {
+fn view(model: &Model) -> View<Msg> {
     button![
         simple_ev(Ev::Click, Msg::Increment),
         format!("Hello, World × {}", model.val)
