@@ -25,7 +25,7 @@ enum Msg {
     Increment,
 }
 
-fn update(msg: Msg, model: &mut Model, _: &mut Orders<Msg>) {
+fn update(msg: Msg, model: &mut Model, _: &mut impl Orders<Msg>) {
     match msg {
         Msg::Increment => model.val += 1,
     }
@@ -34,7 +34,7 @@ fn update(msg: Msg, model: &mut Model, _: &mut Orders<Msg>) {
 
 // View
 
-fn view(model: &Model) -> View<Msg> {
+fn view(model: &Model) -> impl View<Msg> {
     button![
         simple_ev(Ev::Click, Msg::Increment),
         format!("Hello, World × {}", model.val)
@@ -43,7 +43,7 @@ fn view(model: &Model) -> View<Msg> {
 
 #[wasm_bindgen]
 pub fn render() {
-    seed::App::build(Model::default(), update, view)
+    seed::App::build(|_, _| Model::default(), update, view)
         .finish()
         .run();
 
