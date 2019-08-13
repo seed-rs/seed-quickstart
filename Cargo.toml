@@ -23,6 +23,6 @@ futures = "^0.1.26"
 wasm-bindgen-test = "0.2.45" # NOTE: keep in sync with wasm-bindgen version
 
 
-[profile.release]
+[profile.release]  # Attempts to minimize file size
 lto = true
 opt-level = 'z'

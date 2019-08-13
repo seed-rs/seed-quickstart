@@ -41,7 +41,7 @@ fn view(model: &Model) -> impl View<Msg> {
     ]
 }
 
-#[wasm_bindgen]
+#[wasm_bindgen(start)]
 pub fn render() {
     seed::App::build(|_, _| Model::default(), update, view)
         .finish()
