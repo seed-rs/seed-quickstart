@@ -51,6 +51,11 @@ workspace = false
 command = "microserver"
 args = ["--port", "${PORT}"]
 
+[tasks.start]
+description = "Combine the build and serve tasks"
+workspace = false
+dependencies = ["build", "serve"]
+
 
 # ---- LINT ----
 
