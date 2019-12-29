@@ -1,8 +1,6 @@
 use seed::{*, prelude::*};
 
 
-// Model
-
 struct Model {
     pub val: i32,
 }
@@ -16,8 +14,6 @@ impl Default for Model {
 }
 
 
-// Update
-
 #[derive(Clone)]
 enum Msg {
     Increment,
@@ -29,8 +25,6 @@ fn update(msg: Msg, model: &mut Model, _: &mut impl Orders<Msg>) {
     }
 }
 
-
-// View
 
 fn view(model: &Model) -> impl View<Msg> {
     button![
