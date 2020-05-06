@@ -8,19 +8,18 @@
 
 `rustup update`
 
-`rustup target add wasm32-unknown-unknown`
-
 `cargo install cargo-make`
 
-Run `cargo make build` in a terminal to build the app, and `cargo make serve` to start a dev server
-on `127.0.0.1:8000`.
+Run `cargo make start` in a terminal to build the app, and start the server on `127.0.0.1:8000`.
+
+This will also install `cargo-wasm-pack` and add `wasm32-unknown-unknown` to your rustup toolchains
 
 If you'd like the compiler automatically check for changes, recompiling as
 needed, run `cargo make watch` instead of `cargo make build`.
 
 **Deploy**
 
-1. Run `cargo make build release`
+1. Run `cargo make start_release`
 2. Upload `index.html` and `pkg` to your web server
 
 ---
