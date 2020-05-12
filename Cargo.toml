@@ -1,27 +1,30 @@
 [package]
-name = "appname"
 version = "0.1.0"
+name = "app_name"
+repository = "https://github.com/seed-rs/seed-quickstart"
 authors = ["Your Name <email@address.com>"]
+description = "App Description"
+categories = ["category"]
+license = "MIT"
+readme = "./README.md"
 edition = "2018"
-
 
 [lib]
 crate-type = ["cdylib"]
 
+[dev-dependencies]
+wasm-bindgen-test = "0.3.12"
 
 [dependencies]
-seed = "^0.6.0"
-wasm-bindgen = "^0.2.50"
+# Referenced commit fixes base url and memory bugs in Seed 0.7.0
+# (https://github.com/seed-rs/seed/pull/454 + https://github.com/seed-rs/seed/pull/455).
+# Replace with "0.8.0" once the new Seed version is released.
+seed = { git = "https://github.com/seed-rs/seed", rev = "b25cf59" }
 
-# For serialization, eg sending requests to a server. Otherwise, not required.
-serde = { version = "^1.0.85", features = ['derive'] }
-futures = "^0.3.4"
-
-
-[dev-dependencies]
-wasm-bindgen-test = "0.2.50" # NOTE: keep in sync with wasm-bindgen version
-
-
-[profile.release]  # Attempts to minimize file size
+[profile.release]
 lto = true
 opt-level = 'z'
+codegen-units = 1
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ['-Os']
