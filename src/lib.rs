@@ -5,13 +5,25 @@
 
 use seed::{prelude::*, *};
 
+// ------ ------
+//     Init
+// ------ ------
+
 // `init` describes what should happen when your app started.
 fn init(_: Url, _: &mut impl Orders<Msg>) -> Model {
     Model::default()
 }
 
+// ------ ------
+//     Model
+// ------ ------
+
 // `Model` describes our app state.
 type Model = i32;
+
+// ------ ------
+//    Update
+// ------ ------
 
 // (Remove the line below once any of your `Msg` variants doesn't implement `Copy`.)
 #[derive(Copy, Clone)]
@@ -27,6 +39,10 @@ fn update(msg: Msg, model: &mut Model, _: &mut impl Orders<Msg>) {
     }
 }
 
+// ------ ------
+//     View
+// ------ ------
+
 // (Remove the line below once your `Model` become more complex.)
 #[allow(clippy::trivially_copy_pass_by_ref)]
 // `view` describes what to display.
@@ -37,6 +53,10 @@ fn view(model: &Model) -> Node<Msg> {
         button![model, ev(Ev::Click, |_| Msg::Increment),],
     ]
 }
+
+// ------ ------
+//     Start
+// ------ ------
 
 // (This function is invoked by `init` function in `index.html`.)
 #[wasm_bindgen(start)]
