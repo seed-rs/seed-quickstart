@@ -13,13 +13,12 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.12"
+wasm-bindgen-test = "0.3.13"
 
 [dependencies]
-# Referenced commit fixes base url and memory bugs in Seed 0.7.0
-# (https://github.com/seed-rs/seed/pull/454 + https://github.com/seed-rs/seed/pull/455).
-# Replace with "0.8.0" once the new Seed version is released.
-seed = { git = "https://github.com/seed-rs/seed", rev = "b25cf59" }
+# This commit points to Seed 0.7.0 with important fixes.
+# Replace with `seed = "0.8.0"` (or newer) once released.
+seed = { git = "https://github.com/seed-rs/seed", rev = "0a538f0" }
 
 [profile.release]
 lto = true
