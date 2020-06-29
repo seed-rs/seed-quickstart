@@ -47,6 +47,7 @@ args = ["clippy", "--all-features", "--", "--deny", "warnings", "--deny", "clipp
 
 [tasks.fmt]
 description = "Format with rustfmt"
+install_crate = { rustup_component_name = "rustfmt", binary = "rustfmt", test_arg = "--help" }
 command = "cargo"
 args = ["fmt"]
 
