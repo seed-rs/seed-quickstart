@@ -28,7 +28,7 @@
 
 ## 3. Prepare your project for work
 
-1. Open the project in your favorite IDE (I recommend [VS Code](https://code.visualstudio.com/) + [Rust Anaylzer](https://rust-analyzer.github.io/)).
+1. Open the project in your favorite IDE (I recommend [VS Code](https://code.visualstudio.com/) + [Rust Analyzer](https://rust-analyzer.github.io/)).
 1. Open a new terminal tab / window and run: `cargo make serve`
 1. Open a second terminal tab and run: `cargo make watch`
 1. If you see errors, try to fix them or write on our [chat](https://discord.gg/JHHcHp5) or [forum](https://seed.discourse.group/).
@@ -39,7 +39,7 @@
 1. Open [localhost:8000](http://localhost:8000) in a browser (I recommend Firefox and Chrome).
 1. Modify source files (e.g. `/src/lib.rs` or `/index.html`).
 1. Watch compilation in the terminal tab where you run `cargo make watch`.
-1. You can watch dev-server responses in the tab where you run `cargo make server`.
+1. You can watch dev-server responses in the tab where you run `cargo make serve`.
 1. Refresh your browser and see changes.
 1. Go to step 2.
 
