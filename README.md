@@ -4,7 +4,16 @@
 
 ## 1. Create a new project
 
-1. The simplest way how to do it is to click on the green button **Use this template** on the GitHub [profile](https://github.com/seed-rs/seed-quickstart) of this quickstart.
+1. You can use cargo generate to use this template.
+
+[Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
+
+```
+cargo generate --git https://github.com/seed-rs/seed-quickstart.git --name my-project
+cd my-project
+```
+
+1. Alternatively, simply click on the green button **Use this template** on the GitHub [profile](https://github.com/seed-rs/seed-quickstart) of this quickstart.
 
 1. Make sure Git doesn't automatically convert your newlines to CLRF because linters don't like it.
     - Run `$ git config --global core.autocrlf` in your terminal and it should return `input` or `false`. See [Git docs](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for more info.
