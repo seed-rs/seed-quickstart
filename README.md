@@ -4,14 +4,12 @@
 
 ## 1. Create a new project
 
-1. You can use cargo generate to use this template.
+1. You can use [cargo generate](https://github.com/ashleygwilliams/cargo-generate) to use this template.
 
-[Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
-
-```
-cargo generate --git https://github.com/seed-rs/seed-quickstart.git --name my-project
-cd my-project
-```
+    ```bash
+    $ cargo generate --git https://github.com/seed-rs/seed-quickstart.git --name my-project
+    $ cd my-project
+    ```
 
 1. Alternatively, simply click on the green button **Use this template** on the GitHub [profile](https://github.com/seed-rs/seed-quickstart) of this quickstart.
 
