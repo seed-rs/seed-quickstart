@@ -16,7 +16,7 @@
 1. Make sure Git doesn't automatically convert your newlines to CLRF because linters don't like it.
     - Run `$ git config --global core.autocrlf` in your terminal and it should return `input` or `false`. See [Git docs](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for more info.
 
-1. Clone your new repository to your local machine. I use [GitKraken](https://www.gitkraken.com/), but you are probably better developer than me - use your favorite terminal.
+1. Clone your new repository to your local machine. I use [GitKraken](https://www.gitkraken.com/), but you are probably a better developer than me - use your favorite terminal.
 
 ## 2. Install / check required tools
 
