@@ -13,12 +13,10 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3.13"
+wasm-bindgen-test = "0.3.18"
 
 [dependencies]
-# This commit points to Seed 0.7.0 with important fixes.
-# Replace with `seed = "0.8.0"` (or newer) once released.
-seed = { git = "https://github.com/seed-rs/seed", rev = "0a538f0" }
+seed = "0.8.0"
 
 [profile.release]
 lto = true
