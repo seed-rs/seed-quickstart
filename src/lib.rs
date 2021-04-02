@@ -19,7 +19,9 @@ fn init(_: Url, _: &mut impl Orders<Msg>) -> Model {
 // ------ ------
 
 // `Model` describes our app state.
-struct Model { counter:i32 }
+struct Model {
+    counter: i32,
+}
 
 // ------ ------
 //    Update
