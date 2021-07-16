@@ -13,7 +13,7 @@
 
 1. Alternatively, simply click on the green button **Use this template** on the GitHub [profile](https://github.com/seed-rs/seed-quickstart) of this quickstart.
 
-1. Make sure Git doesn't automatically convert your newlines to CLRF because linters don't like it.
+1. Make sure Git doesn't automatically convert your newlines to CRLF because linters don't like it.
     - Run `$ git config --global core.autocrlf` in your terminal and it should return `input` or `false`. See [Git docs](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) for more info.
 
 1. Clone your new repository to your local machine. I use [GitKraken](https://www.gitkraken.com/), but you are probably a better developer than me - use your favorite terminal.
@@ -22,13 +22,13 @@
 
 1. Make sure you have basic tools installed:
 
-   - [Rust](https://www.rust-lang.org) 
+   - [Rust](https://www.rust-lang.org)
      - Check: `$ rustc -V` => `rustc 1.43.1 (8d69840ab 2020-05-04)`
      - Install: https://www.rust-lang.org/tools/install
    - [cargo-make](https://sagiegurari.github.io/cargo-make/)
      - Check: `$ cargo make -V` => `cargo-make 0.30.7`
      - Install: `$ cargo install cargo-make`
-       
+
 1. Platform-specific tools like `ssl` and `pkg-config`:
     - Follow recommendations in build errors (during the next chapter).
     - _Note_: Don't hesitate to write notes or a tutorial for your platform and create a PR .
